@@ -1,4 +1,4 @@
-const options = ['About', 'Services', 'Training'];
+const options: String[] = ['About', 'Services', 'Training'];
 
 const Menu = () => {
     return (

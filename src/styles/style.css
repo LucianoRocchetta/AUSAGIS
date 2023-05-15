@@ -20,6 +20,24 @@ button {
     height: 100vh;
 }
 
+/* TYPEWRITTING AND TITLE */
+.header-info {
+    z-index: 2;
+    right: 20%;
+    top: 50%;
+    position: absolute;
+    color: #fff;
+}
+
+.header-info h1 {
+    font-size: 4rem;
+}
+
+.header-info span {
+    color: #ebebeb;
+    font-size: 1.5rem;
+}
+
 /* MENU STYLES */
 .menu-container {
     z-index: 1;

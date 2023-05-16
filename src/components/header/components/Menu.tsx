@@ -1,3 +1,5 @@
+import { GrFacebook, GrTwitter, GrLinkedin, GrMail } from 'react-icons/gr'
+import { BsArrowDownCircle } from 'react-icons/bs';
 const options: String[] = ['About', 'Services', 'Training'];
 
 const Menu = () => {
@@ -13,6 +15,15 @@ const Menu = () => {
                     </menu>
                     <button className="menu-btn">Contact Us</button>
                 </div>
+            </div>
+            <div className="social-media-container">
+                    <GrFacebook />
+                    <GrTwitter />
+                    <GrLinkedin />
+                    <GrMail />
+            </div>
+            <div className="start-button">
+                <BsArrowDownCircle />
             </div>
         </>
     )

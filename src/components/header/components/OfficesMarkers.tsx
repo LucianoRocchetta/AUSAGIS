@@ -25,9 +25,9 @@ const dataTest: office[] = [{
 }
 ]
 
-const OfficesMarkers = ({ layer }: any) => {
+const OfficesMarkers = ({ world }: any) => {
 
-    layer.graphics = dataTest.map((office) => {
+    world.graphics = dataTest.map((office) => {
         return (new Graphic({
             geometry: {
                 type: 'point',
@@ -51,7 +51,6 @@ const OfficesMarkers = ({ layer }: any) => {
                 title: office.name,
                 content: `<div class = "popup-template">
                         <span>${office.description}</span>
-                        <button>Hola mundo</button>
                         <img src = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"></img>
                     </div>
             `

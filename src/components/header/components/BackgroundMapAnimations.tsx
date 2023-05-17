@@ -1,20 +1,27 @@
-const BackgroundMapAnimations = ({world}:any) => {
-    console.log(world)
+import { useEffect } from 'react';
 
-    //Testing target
-    //GoTo animation (Testing)
-    setTimeout(()=>{
-       /* world.goTo({
-            center: [-122, 38, 50000], //Se puede utilizar los pointers
-            tilt: 75,
-            heading: 105,
-        */
-       world.goTo({
-          }, {speedFactor:0.1, easing: "out-quint"}).catch(e => console.log(e.name));
-    }, 3000); 
+const BackgroundMapAnimations = ({ world }: any) => {
+    //Cloning camera
+    const camera = world.camera.clone();
+    
+    useEffect(() => {
 
+    const animation = async () => {
+        for(let i = 0; i < world.graphics.items.length; i++) {
+            await world.goTo(world.graphics.items[i], {
+                    easing: "linear",
+                    speedFactor: 0.1,
+                    duration: 15000,
+                    tilt: camera.tilt,
+                }
+        ).catch(e => e);
+        }
+    }
+    animation();
+    }, []);
+    
 
-    return null;
+return null;
 }
 
 export { BackgroundMapAnimations };

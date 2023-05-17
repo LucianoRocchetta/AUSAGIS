@@ -6,7 +6,7 @@ const TypeWritters = () => {
         <Typewriter
             options={{
                 loop: true,
-                delay: 100,
+                delay: 200,
                 autoStart: true,
                 strings: ['GIS Consulting Services', 'Data Analytics', 'Training and support'],
             }}

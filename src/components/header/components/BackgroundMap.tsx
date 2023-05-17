@@ -13,10 +13,11 @@ esriConfig.apiKey = 'AAPKd6297e652e3649d68560645aa126553fKRlw0Kii3wYDc8HB67xgoRv
 const BackgroundMap = () => {
   const [worldObject, setWorldObject] = useState();
   // IDEA: Crear un graphic layer donde se renderize automaticamente las oficinas
-  const officesGraphicLayer = new GraphicsLayer();
   const mapContainer = useRef();
 
   useEffect(() => {
+    const officesGraphicLayer = new GraphicsLayer();
+
     const map = new Map({
       basemap: 'arcgis-imagery',
       ground: 'world-elevation',
@@ -26,8 +27,19 @@ const BackgroundMap = () => {
     const world = new SceneView({
       container: mapContainer.current,
       map: map,
-      center: [-58.37723, -34.61315],
-      zoom: 1,
+      zoom: 0,
+      navigation: {
+        mouseWheelZoomEnabled: false,
+        browserTouchPanEnabled: false
+      },
+      camera: {
+        position: {
+          x: -58.37723,
+          y: -34.61315,
+          z: 8000000,
+        }, 
+        tilt: 25,
+      },
       viewingMode: "global",
       qualityProfile: "medium", //low for mobile phone
       environment: {
@@ -35,8 +47,8 @@ const BackgroundMap = () => {
           type: "color",
           color: '#161616'
         },
-        starsEnabled: false,
-        atmosphereEnabled: false,
+        starsEnabled: true,
+        atmosphereEnabled: true,
       },
       ui: {
         components: []
@@ -46,9 +58,9 @@ const BackgroundMap = () => {
 
   return (
     <div ref={mapContainer} className="background-map">
-      {
+      { (worldObject) &&
         <>
-          <OfficesMarkers layer={officesGraphicLayer}/>
+          <OfficesMarkers world={worldObject}/>
           <BackgroundMapAnimations world={worldObject}/>
         </>
       }

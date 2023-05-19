@@ -24,7 +24,7 @@ const BackgroundMap = () => {
       layers: [officesGraphicLayer],
     })
 
-    const world = new SceneView({
+    new SceneView({
       container: mapContainer.current,
       map: map,
       zoom: 0,

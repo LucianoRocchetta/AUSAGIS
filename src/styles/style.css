@@ -27,11 +27,16 @@ button {
     }
 }
 
+/* HEADER STYLES */
+.header-container {
+    width: 100%;
+    height: 100vh;
+}
 
 .background-map {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 /* TYPEWRITTING AND TITLE */
@@ -137,4 +142,38 @@ button {
     animation-fill-mode: backwards;
     animation-iteration-count: infinite;
     animation-duration: 2s;
+}
+
+/* BODY STYLES */
+.body-container {
+    width: 100%;
+    background-color: #ebebeb;
+}
+
+.body-container .body-content {
+    width: 60%;
+    margin: auto;
+}
+
+.body-container .body-content h2 {
+    font-size: 4rem;
+}
+
+.body-container .body-content img {
+    width: 100%;
+}
+
+/* ANIMATEDBOX CONTAINER */
+.animatedBox-container {
+    margin-bottom: 50%;
+}
+
+.animatedBox-container .animatedBox-info {
+    display: flex;
+
+}
+.animatedBox-container img {
+    position: sticky;
+    top: 0;
+    height: 300px;
 }

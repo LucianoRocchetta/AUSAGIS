@@ -17,7 +17,12 @@ const BackgroundMapAnimations = ({ world }: any) => {
         ).catch(e => e);
         }
     }
-    animation();
+    try{
+        animation();
+    } catch (e) {
+        console.log(e);
+    }
+    
     }, []);
     
 

@@ -8,6 +8,7 @@ import { useRef, useEffect, useState } from 'react';
 import { OfficesMarkers } from './OfficesMarkers';
 import { BackgroundMapAnimations } from "./BackgroundMapAnimations";
 
+//esriConfig.apiKey = import.meta.env.API_KEY; Configuración de API segura
 esriConfig.apiKey = 'AAPKd6297e652e3649d68560645aa126553fKRlw0Kii3wYDc8HB67xgoRvJN3_FEL--UR9BiajsRzqllRPDlIGCrAaA6V91XNHc';
 
 const BackgroundMap = () => {
@@ -58,11 +59,11 @@ const BackgroundMap = () => {
 
   return (
     <div ref={mapContainer} className="background-map">
-      { (worldObject) &&
-        <>
+      { worldObject &&
+        (<>
           <OfficesMarkers world={worldObject}/>
           <BackgroundMapAnimations world={worldObject}/>
-        </>
+        </>)
       }
     </div>
   )
